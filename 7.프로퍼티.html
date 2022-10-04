@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let user = {
+            name: "john",
+            surname: "Smith",
+
+            get fullName(){
+                return `${this.name} ${this.surname}`
+            },
+
+            set fullNmae(value){
+                [this.name,this.surname] = value.split(" ");
+            }
+        };
+
+        let descriptor = Object.getOwnPropertyDescriptor(user,'name');
+
+        alert(JSON.stringify(descriptor, null,2));
+
+        user.fullName = "Alice Cooper";
+
+        alert(user.name);
+        alert(user.surname);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
